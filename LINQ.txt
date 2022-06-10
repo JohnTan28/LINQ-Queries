@@ -1,0 +1,7 @@
+DTPart.AsEnumerable().Where(function(row) Not DTFull.AsEnumerable().Select(function® r.Field(Of String)( columnindex )).Any(function(x) x = row.Field(Of String)( columnindex ))).CopyToDataTable()
+
+Matched rows
+Datatable Out_Matched_Data = In_DataTable1.AsEnumerable().Where(function(row) In_DataTable2.AsEnumerable().Select(function(r) r.Field(Of Int32)(In_DT2_ColName_To_Match.ToString)).Any(function(x) x = row.Field(Of Int32)(In_DT1_ColName_To_Match.ToString))).CopyToDataTable()
+
+Not Matched rows
+Datatable Out_NonMatched_Data = In_DataTable1.AsEnumerable().Where(function(row) Not In_DataTable2.AsEnumerable().Select(function(r) r.Field(Of Int32)(In_DT2_ColName_To_Match.ToString)).Any(function(x) x = row.Field(Of Int32)(In_DT1_ColName_To_Match.ToString))).CopyToDataTable()
